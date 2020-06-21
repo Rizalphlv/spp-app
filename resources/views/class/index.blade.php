@@ -2,11 +2,11 @@
 
 @section('title' , 'Spp | Class')
 
-@section('plugin')
-   
-@endsection
+
 
 @section('content')
+
+
     <?php $a = 1;?>
     <table id="data" class="table">
         <thead>
@@ -25,8 +25,8 @@
                     <td>{{$class->class_name}}</td>
                     <td>{{$class->major}}</td>
                     <td>
-                        <a href="" class="btn btn-warning">Update</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <a href="{{route('class.update', $class->id)}}" class="btn btn-warning">Update</a>
+                        <a href="{{route('class.delete', $class->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 <?php $a++;?>

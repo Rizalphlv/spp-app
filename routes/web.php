@@ -20,4 +20,8 @@ Route::get('/', function () {
 
 //class
 Route::get('/class','ClassesController@read')->name('class.index');
+Route::post('/class/add','ClassesController@store')->name('class.store');
+Route::get('/class/update/{id}','ClassesController@put')->name('class.update');
+Route::post('/class/edit/{id}','ClassesController@update')->name('class.edit');
+Route::get('/class/delete/{id}','ClassesController@delete')->name('class.delete');
 
