@@ -1,9 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="col-md-4">
-        
-    </div> 
-    
-    <div class="col-md-8">
-        
+<footer class=" footer bg-light">
+    <div class="container">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; LPC 2020</span>
+      </div>
     </div>
-</nav>
+  </footer>
+</div>

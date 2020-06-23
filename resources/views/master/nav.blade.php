@@ -1,3 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Spp Management</a>
-</nav>
+<div id="content-wrapper" class="d-flex flex-column">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Spp Management</a>
+    </nav>
+

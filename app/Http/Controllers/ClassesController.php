@@ -23,18 +23,18 @@ class ClassesController extends Controller
     
          //try if not find any something wrong it will do procces
         try
-        {                                   
+        {                                ;
           Classes::create([
-              'class_name'=> $class_name,
-              'major' => $major
+              'class_name'=> $request->class,
+              'major' => $request->major
           ]);
 
-          return redirect('');
+          return redirect(route('class.index'));
         }
         //Exception used for inform about error
         catch(\Exception $ex)                  
         {
-            report($ex);
+            dd($ex);
         }
     }
     
@@ -42,8 +42,9 @@ class ClassesController extends Controller
     public function put($id)
     {
         //pharse all data which id == $id
-        $class = Classes::find($id);
-        return view('',['class' => $class]);
+        $class = Classes::all();
+        $class_data = Classes::find($id);
+        return view('class/index',['class-data' => $class_data, 'class' => $class]);
     }
 
     //update
@@ -56,7 +57,7 @@ class ClassesController extends Controller
             $class->major = $request->major;
             $class->save();
 
-            redirect('');
+            redirect(route('class.index'));
         }
         catch(\Exception $ex)
         {
@@ -73,11 +74,11 @@ class ClassesController extends Controller
             $class = Classes::find($id);
             $class->delete();
 
-            redirect('');
+            return redirect(route('class.index'));
         }
         catch(\Exception $ex)
         {
-            report($ex);
+            dd($ex);
         }
     }
 }
